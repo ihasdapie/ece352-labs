@@ -6,8 +6,21 @@
 
 .global main
 
+.text
 main:
-# ...
+  addi sp, sp, -4
+  stw ra, 0(sp);
+  movi r4, 10
+  call printOct
 
-  ret	# Make sure this returns to main's caller
+  addi sp, sp, -4
+  stw ra, 0(sp);
+  movi r4, 10
+  call printHex
 
+  addi sp, sp, -4
+  stw ra, 0(sp);
+  movi r4, 10
+  call printDec
+
+  ret
