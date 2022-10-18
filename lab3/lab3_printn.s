@@ -4,19 +4,21 @@ printn:
 	subi sp, sp, 4
     stw ra, 0(sp)
     # uses a number of callee-stored registers; r23-r17 = 6X
-	
-	# r21 is ptr to args
-	mov r21, sp;
-	addi r21, r21, 4;
 
-	subi sp, sp, 24
+
+	subi sp, sp, 28
 	stw r23, 0(sp);
-	stw r21, 4(sp);
-	stw r20, 8(sp);
-	stw r19, 12(sp);
-	stw r18, 16 (sp);
-	stw r17, 20 (sp);
-	
+	stw r22, 4(sp);
+	stw r21, 8(sp);
+	stw r20, 12(sp);
+	stw r19, 16 (sp);
+	stw r18, 20 (sp);
+	stw r17, 24 (sp);
+    
+	#r21 is ptr to args
+	mov r21, sp;
+	addi r21, r21, 32;
+    
 
     # load ptr to string
     # put this in a callee-saved (unclobbered) register
@@ -93,16 +95,16 @@ printn:
 	
 	# restore calee saved registers
 	ldw r23, 0(sp);
-	ldw r21, 4(sp);
-	ldw r20, 8(sp);
-	ldw r19, 12(sp);
-	ldw r18, 16(sp);
-	ldw r17, 20(sp);
-	addi sp, sp, 24
+	ldw r22, 4(sp);
+	ldw r21, 8(sp);
+	ldw r20, 12(sp);
+	ldw r19, 16(sp);
+	ldw r18, 20(sp);
+    ldw r17, 24(sp);
+	addi sp, sp, 28
 	
 	
 	# pop return addr from stack, restore stack, return
     ldw ra, 0(sp)
 	addi sp, sp, 4
 	ret
-
