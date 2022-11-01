@@ -30,10 +30,9 @@ CR [31:16] is the number of free bytes in the write FIFO
 
 */
 
-
 .equ JTAG_UART_BASE, 0x10001020
 .equ CLOCK_BASE, 0xFF202000
-.equ SPEED, 40
+
 .data
 
 .text
@@ -51,7 +50,7 @@ main:
   
  loop:
   
-
+  call read_sensors
   /*
   
   straight -> angle = 0
@@ -65,50 +64,8 @@ main:
   multiply -0x19 by no. of 1s replaced by 0s
   */
   
-  # make accel small by default 
+  /* need some logic to get back on the road if we're totally off the road*/
   
-  /*
-  call read_x
-  movi r4, -5
-  blt r2, r4, maintain_SPEED
-  movi r4, 7
-  bgt r2, r4, maintain_SPEED
-  */
-  
-  call read_xy
-  /*movi r4, 0
-  bgt r2, r4, maintain_SPEED*/
-  movi r4, -24
-  blt r3, r4, maintain_SPEED
-  br zoomzoom
-  
-  
-  
-  
-  
-maintain_SPEED: 
-  call read_speed
-  movi r4, SPEED
-  bgt r2, r4, decel  
-  accel:
-  	movi r4, 0x7f
-    call set_accel
-    br turns
-  decel:
-  	movi r4, -0x7f
-    call set_accel
-  br turns
-
-zoomzoom:
-  movi r4, 0x7f
-  call set_accel
-  br turns
-  
-        
-        
-  turns:
- 
-  call read_sensors      
   movi r3, 0x1F
   beq r2, r3, straight
   
@@ -131,42 +88,42 @@ zoomzoom:
   beq r2, r3, left4
   
   /* hope that all the sensors never go off for now */
-
+  
   straight:
   	movi r4, 0x00
 	call set_steering
 	br post_steer
 	
-  left1:
-  	movi r4, 0x30
+  right1:
+  	movi r4, 0x20
 	call set_steering
 	br post_steer
-  left2:
-  	movi r4, 0x7f
+  right2:
+  	movi r4, 0x40
 	call set_steering
 	br post_steer
-  left3:
-  	movi r4, 0x7f
+  right3:
+  	movi r4, 0x60
 	call set_steering
 	br post_steer
-  left4:
+  right4:
   	movi r4, 0x7f
 	call set_steering
 	br post_steer
 
-  right1:
-  	movi r4, -0x30
+  left1:
+  	movi r4, -0x20
 	call set_steering
 	br post_steer
-  right2:
-  	movi r4, -0x7f
+  left2:
+  	movi r4, -0x40
 	call set_steering
 	br post_steer
-  right3:
-  	movi r4, -0x7f
+  left3:
+  	movi r4, -0x60
 	call set_steering
 	br post_steer
-  right4:
+  left4:
   	movi r4, -0x7f
 	call set_steering
 	br post_steer
@@ -174,12 +131,14 @@ zoomzoom:
   
 post_steer:
   /* set acceleration to something big */
-
+  movi r4, 0x7F
+  call set_accel
+  
   
  
   /* do a dumb delay */
   movia r4, 0xf; 
-  /* call delay */
+  call delay
   
   /* loop forever */
   br loop
@@ -218,54 +177,22 @@ read_sensors:
   stw ra, 0(sp)
   movi r4, 0x02
   call uart_write
-  # read until we get a nonzero value
-  read_sensors_loop:
-  	call uart_read
-    beq r2, r0, read_sensors_loop
-  mov r13, r2
-  call uart_read
-  mov r2, r13
+  call uart_read		#read once: packet type 0
+  call uart_read		#read again: sensor readings
+  call drain_buffers	#clear rest of input; dont care about speed
   ldw ra, 0(sp)
   addi sp, sp, 8
   ret
+#  beq r2, r0, read_sensors_fail
+#  call uart_read
+#  br read_sensors_success
   
-read_speed:
-  subi sp, sp, 8
-  stw ra, 0(sp)
-  movi r4, 0x02
-  call uart_write
-  # read until we get a nonzero value
-  read_speed_loop:
-  	call uart_read
-    beq r2, r0, read_speed_loop
-  call uart_read
-  ldw ra, 0(sp)
-  addi sp, sp, 8
-  ret
-  
-
-
-read_xy:
-  subi sp, sp, 8
-  stw ra, 0(sp)
-  movi r4, 0x03
-  call uart_write
-  read_y_loop:
-  	call uart_read
-    movi r3, 1
-    bne r2, r3, read_y_loop
-  # read until we get a nonzero value
-  call uart_read
-  mov r3, r2
-  call uart_read
-  mov r4, r2
-  call uart_read
-  
-  mov r2, r3
-  mov r3, r4
-  ldw ra, 0(sp)
-  addi sp, sp, 8
-  ret
+#  read_sensors_fail:
+#	and r2, r2, r0
+#  read_sensors_success:
+#  	ldw ra, 0(sp)
+#	addi sp, sp, 8
+#	ret
 
 set_steering:
   subi sp, sp, 8
