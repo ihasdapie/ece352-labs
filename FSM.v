@@ -24,9 +24,9 @@ N, Z,
 PCwrite, AddrSel, MemRead,
 MemWrite, IRload, R1Sel, MDRload,
 R1R2Load, ALU1, ALU2, ALUop,
-ALUOutWrite, RFWrite, RegIn, FlagWrite//, state
+ALUOutWrite, RFWrite, RegIn, FlagWrite, cycle_counter//, state
 );
-	input	[3:0] instr;
+	input	[7:0] instr;
 	input	N, Z;
 	input	reset, clock;
 	output	PCwrite, AddrSel, MemRead, MemWrite, IRload, R1Sel, MDRload;
@@ -35,11 +35,11 @@ ALUOutWrite, RFWrite, RegIn, FlagWrite//, state
 	
 	
 	//implementation of counter - https://www.chipverify.com/verilog/verilog-parameters
-	output reg [2:0] cycle_counter;	// 3 bits bc max amount of cycles is 5?
+	output reg [15:0] cycle_counter;
 
 	//output	[3:0] state;
 	
-	reg [3:0]	state;
+	reg [4:0]	state;
 	reg	PCwrite, AddrSel, MemRead, MemWrite, IRload, R1Sel, MDRload;
 	reg	R1R2Load, ALU1, ALUOutWrite, RFWrite, RegIn, FlagWrite;
 	reg	[2:0] ALU2, ALUop;
@@ -55,27 +55,26 @@ ALUOutWrite, RFWrite, RegIn, FlagWrite//, state
 	// asynchronous reset
 	always @(posedge clock or posedge reset)
 	begin
-		if (reset) 
+		if (reset) begin
 			state = reset_s;
 			cycle_counter <= 0; 	//reset counter when reset is triggered
-		else
-		begin
+			end
+		else begin
 			case(state)
 				reset_s:	state = c1; 		// reset state
 				c1:			state = c2; 		// cycle 1
 				c2:			begin				// cycle 2
-								if(instr == 4'b0100 | instr == 4'b0110 | instr == 4'b1000) state = c3_asn;
+								if(instr[3:0] == 4'b0100 | instr[3:0] == 4'b0110 | instr[3:0] == 4'b1000) state = c3_asn;
 								else if( instr[2:0] == 3'b011 ) state = c3_shift;
 								else if( instr[2:0] == 3'b111 ) state = c3_ori;
-								else if( instr == 4'b0000 ) state = c3_load;
-								else if( instr == 4'b0010 ) state = c3_store;
-								else if( instr == 4'b1101 ) state = c3_bpz;
-								else if( instr == 4'b0101 ) state = c3_bz;
-								else if( instr == 4'b1001 ) state = c3_bnz;
+								else if( instr[3:0] == 4'b0000 ) state = c3_load;
+								else if( instr[3:0] == 4'b0010 ) state = c3_store;
+								else if( instr[3:0] == 4'b1101 ) state = c3_bpz;
+								else if( instr[3:0] == 4'b0101 ) state = c3_bz;
+								else if( instr[3:0] == 4'b1001 ) state = c3_bnz;
 
-								else if( instr == 4'b0001 ) state = c3_stop;
+								else if( instr == 8'b00000001 ) state = c3_stop;
 								else if( instr == 8'b10000001 ) state = c3_nop;
-								
 								
 								else state = 0;
 							end
@@ -93,11 +92,10 @@ ALUOutWrite, RFWrite, RegIn, FlagWrite//, state
 				c3_bnz:		state = c1; 		// cycle 3: BNZ
 				
 				c3_stop:	state = c3_stop;	// infinite loop in the stop section
-				c3_nop:		state = c1;//		// dont reset; go to checking state again
+				c3_nop:		state = c1;			// dont reset; go to checking state again
 				
 			endcase
-			if (state != c3_stop)
-				cycle_counter <= cycle_counter + 1; 	//incr cycle counter at end of the cycle
+			if (state != c3_stop) cycle_counter <= cycle_counter + 1; 	//incr cycle counter at end of the cycle
 		end
 	end
 
@@ -160,7 +158,7 @@ ALUOutWrite, RFWrite, RegIn, FlagWrite//, state
 					FlagWrite = 0;
 				end
 			c3_asn:		begin
-							if ( instr == 4'b0100 ) 		// add
+							if ( instr[3:0] == 4'b0100 ) 		// add
 								//control = 19'b0000000010000001001;
 							begin
 								PCwrite = 0;
@@ -179,7 +177,7 @@ ALUOutWrite, RFWrite, RegIn, FlagWrite//, state
 								RegIn = 0;
 								FlagWrite = 1;
 							end	
-							else if ( instr == 4'b0110 ) 	// sub
+							else if ( instr[3:0] == 4'b0110 ) 	// sub
 								//control = 19'b0000000010000011001;
 							begin
 								PCwrite = 0;
@@ -434,7 +432,7 @@ ALUOutWrite, RFWrite, RegIn, FlagWrite//, state
 					RegIn = 0;
 					FlagWrite = 0;
 				end
-			c3_nop: 	//control = {};
+				c3_nop: 	//control = {};
 				begin				// i think everything is still 0
 					PCwrite = 0; 	//changed from ~Z to 0
 					AddrSel = 0;
