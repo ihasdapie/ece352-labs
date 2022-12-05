@@ -1,6 +1,6 @@
 Analysis & Synthesis report for multicycle
-Mon Nov 28 17:45:39 2022
-Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+Mon Dec  5 02:07:48 2022
+Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
 ---------------------
@@ -15,39 +15,40 @@ Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
   9. State Machine - |multicycle|FSM:Control|state
- 10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Source assignments for memory:DataMem|DataMemory:inst|altsyncram:altsyncram_component|altsyncram_a1j1:auto_generated
- 14. Parameter Settings for User Entity Instance: FSM:Control
- 15. Parameter Settings for User Entity Instance: memory:DataMem|DataMemory:inst|altsyncram:altsyncram_component
- 16. Parameter Settings for User Entity Instance: sExtend:SE4
- 17. Parameter Settings for User Entity Instance: zExtend:ZE3
- 18. Parameter Settings for User Entity Instance: zExtend:ZE5
- 19. altsyncram Parameter Settings by Entity Instance
- 20. Port Connectivity Checks: "mux5to1_8bit:ALU2_mux"
- 21. Port Connectivity Checks: "mux2to1_2bit:R1Sel_mux"
- 22. Port Connectivity Checks: "mux5to1_8bit:MemMux"
- 23. Port Connectivity Checks: "ALU:ALUV3"
- 24. Port Connectivity Checks: "ALU:ALUV2"
- 25. Port Connectivity Checks: "ALU:ALUV1"
- 26. Port Connectivity Checks: "ALU:ALUV0"
- 27. Port Connectivity Checks: "VRF:VRF_block"
- 28. Port Connectivity Checks: "ALU:ALUR2"
- 29. Port Connectivity Checks: "FSM:Control"
- 30. Post-Synthesis Netlist Statistics for Top Partition
- 31. Elapsed Time Per Partition
- 32. Analysis & Synthesis Messages
- 33. Analysis & Synthesis Suppressed Messages
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for memory:DataMem|DataMemory:inst|altsyncram:altsyncram_component|altsyncram_a1j1:auto_generated
+ 15. Parameter Settings for User Entity Instance: FSM:Control
+ 16. Parameter Settings for User Entity Instance: memory:DataMem|DataMemory:inst|altsyncram:altsyncram_component
+ 17. Parameter Settings for User Entity Instance: sExtend:SE4
+ 18. Parameter Settings for User Entity Instance: zExtend:ZE3
+ 19. Parameter Settings for User Entity Instance: zExtend:ZE5
+ 20. altsyncram Parameter Settings by Entity Instance
+ 21. Port Connectivity Checks: "mux5to1_8bit:ALU2_mux"
+ 22. Port Connectivity Checks: "mux2to1_2bit:R1Sel_mux"
+ 23. Port Connectivity Checks: "mux5to1_8bit:MemMux"
+ 24. Port Connectivity Checks: "ALU:ALUV3"
+ 25. Port Connectivity Checks: "ALU:ALUV2"
+ 26. Port Connectivity Checks: "ALU:ALUV1"
+ 27. Port Connectivity Checks: "ALU:ALUV0"
+ 28. Port Connectivity Checks: "VRF:VRF_block"
+ 29. Port Connectivity Checks: "ALU:ALUR2"
+ 30. Port Connectivity Checks: "FSM:Control"
+ 31. Post-Synthesis Netlist Statistics for Top Partition
+ 32. Elapsed Time Per Partition
+ 33. Analysis & Synthesis Messages
+ 34. Analysis & Synthesis Suppressed Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2018  Intel Corporation. All rights reserved.
+Copyright (C) 2022  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
-and other software and tools, and its AMPP partner logic 
+and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
@@ -57,31 +58,32 @@ the Intel FPGA IP License Agreement, or other applicable license
 agreement, including, without limitation, that your use is for
 the sole purpose of programming logic devices manufactured by
 Intel and sold by Intel or its authorized distributors.  Please
-refer to the applicable agreement for further details.
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
 
 
 
-+-----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                      ;
-+---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Nov 28 17:45:39 2022           ;
-; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Standard Edition ;
-; Revision Name                   ; multicycle                                      ;
-; Top-level Entity Name           ; multicycle                                      ;
-; Family                          ; Cyclone V                                       ;
-; Logic utilization (in ALMs)     ; N/A                                             ;
-; Total registers                 ; 97                                              ;
-; Total pins                      ; 67                                              ;
-; Total virtual pins              ; 0                                               ;
-; Total block memory bits         ; 2,048                                           ;
-; Total DSP Blocks                ; 0                                               ;
-; Total HSSI RX PCSs              ; 0                                               ;
-; Total HSSI PMA RX Deserializers ; 0                                               ;
-; Total HSSI TX PCSs              ; 0                                               ;
-; Total HSSI PMA TX Serializers   ; 0                                               ;
-; Total PLLs                      ; 0                                               ;
-; Total DLLs                      ; 0                                               ;
-+---------------------------------+-------------------------------------------------+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon Dec  5 02:07:48 2022       ;
+; Quartus Prime Version           ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
+; Revision Name                   ; multicycle                                  ;
+; Top-level Entity Name           ; multicycle                                  ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 110                                         ;
+; Total pins                      ; 67                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 2,048                                       ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -176,49 +178,49 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 6           ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 6           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-6         ;   0.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                   ;
-+----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                     ; Library ;
-+----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------+---------+
-; register_8bit.v                  ; yes             ; User Verilog HDL File                  ; C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/register_8bit.v        ;         ;
-; mux2to1_8bit.v                   ; yes             ; User Verilog HDL File                  ; C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/mux2to1_8bit.v         ;         ;
-; mux2to1_2bit.v                   ; yes             ; User Verilog HDL File                  ; C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/mux2to1_2bit.v         ;         ;
-; mux5to1_8bit.v                   ; yes             ; User Verilog HDL File                  ; C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/mux5to1_8bit.v         ;         ;
-; multicycle.v                     ; yes             ; User Verilog HDL File                  ; C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v           ;         ;
-; DataMemory.v                     ; yes             ; User Wizard-Generated File             ; C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/DataMemory.v           ;         ;
-; ALU.v                            ; yes             ; User Verilog HDL File                  ; C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/ALU.v                  ;         ;
-; RF.v                             ; yes             ; User Verilog HDL File                  ; C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/RF.v                   ;         ;
-; extend.v                         ; yes             ; User Verilog HDL File                  ; C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/extend.v               ;         ;
-; HEX.v                            ; yes             ; User Verilog HDL File                  ; C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/HEX.v                  ;         ;
-; FSM.v                            ; yes             ; User Verilog HDL File                  ; C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/FSM.v                  ;         ;
-; memory.bdf                       ; yes             ; User Block Diagram/Schematic File      ; C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/memory.bdf             ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                           ; c:/desl/quartus18/quartus/libraries/megafunctions/altsyncram.tdf                 ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                           ; c:/desl/quartus18/quartus/libraries/megafunctions/stratix_ram_block.inc          ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                           ; c:/desl/quartus18/quartus/libraries/megafunctions/lpm_mux.inc                    ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                           ; c:/desl/quartus18/quartus/libraries/megafunctions/lpm_decode.inc                 ;         ;
-; aglobal180.inc                   ; yes             ; Megafunction                           ; c:/desl/quartus18/quartus/libraries/megafunctions/aglobal180.inc                 ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                           ; c:/desl/quartus18/quartus/libraries/megafunctions/a_rdenreg.inc                  ;         ;
-; altrom.inc                       ; yes             ; Megafunction                           ; c:/desl/quartus18/quartus/libraries/megafunctions/altrom.inc                     ;         ;
-; altram.inc                       ; yes             ; Megafunction                           ; c:/desl/quartus18/quartus/libraries/megafunctions/altram.inc                     ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                           ; c:/desl/quartus18/quartus/libraries/megafunctions/altdpram.inc                   ;         ;
-; db/altsyncram_a1j1.tdf           ; yes             ; Auto-Generated Megafunction            ; C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/db/altsyncram_a1j1.tdf ;         ;
-; data.mif                         ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/data.mif               ;         ;
-; vrf.v                            ; yes             ; Auto-Found Verilog HDL File            ; C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/vrf.v                  ;         ;
-; register_32bit.v                 ; yes             ; Auto-Found Verilog HDL File            ; C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/register_32bit.v       ;         ;
-+----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                     ;
++----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                                       ; Library ;
++----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------------------------------------+---------+
+; register_8bit.v                  ; yes             ; User Verilog HDL File                  ; /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/register_8bit.v        ;         ;
+; mux2to1_8bit.v                   ; yes             ; User Verilog HDL File                  ; /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/mux2to1_8bit.v         ;         ;
+; mux2to1_2bit.v                   ; yes             ; User Verilog HDL File                  ; /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/mux2to1_2bit.v         ;         ;
+; mux5to1_8bit.v                   ; yes             ; User Verilog HDL File                  ; /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/mux5to1_8bit.v         ;         ;
+; multicycle.v                     ; yes             ; User Verilog HDL File                  ; /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.v           ;         ;
+; DataMemory.v                     ; yes             ; User Wizard-Generated File             ; /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/DataMemory.v           ;         ;
+; ALU.v                            ; yes             ; User Verilog HDL File                  ; /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/ALU.v                  ;         ;
+; RF.v                             ; yes             ; User Verilog HDL File                  ; /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/RF.v                   ;         ;
+; extend.v                         ; yes             ; User Verilog HDL File                  ; /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/extend.v               ;         ;
+; HEX.v                            ; yes             ; User Verilog HDL File                  ; /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/HEX.v                  ;         ;
+; FSM.v                            ; yes             ; User Verilog HDL File                  ; /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v                  ;         ;
+; memory.bdf                       ; yes             ; User Block Diagram/Schematic File      ; /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/memory.bdf             ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; /opt/intelFPGA/21.1/quartus/libraries/megafunctions/altsyncram.tdf                                                 ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; /opt/intelFPGA/21.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                          ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; /opt/intelFPGA/21.1/quartus/libraries/megafunctions/lpm_mux.inc                                                    ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; /opt/intelFPGA/21.1/quartus/libraries/megafunctions/lpm_decode.inc                                                 ;         ;
+; aglobal211.inc                   ; yes             ; Megafunction                           ; /opt/intelFPGA/21.1/quartus/libraries/megafunctions/aglobal211.inc                                                 ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; /opt/intelFPGA/21.1/quartus/libraries/megafunctions/a_rdenreg.inc                                                  ;         ;
+; altrom.inc                       ; yes             ; Megafunction                           ; /opt/intelFPGA/21.1/quartus/libraries/megafunctions/altrom.inc                                                     ;         ;
+; altram.inc                       ; yes             ; Megafunction                           ; /opt/intelFPGA/21.1/quartus/libraries/megafunctions/altram.inc                                                     ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; /opt/intelFPGA/21.1/quartus/libraries/megafunctions/altdpram.inc                                                   ;         ;
+; db/altsyncram_a1j1.tdf           ; yes             ; Auto-Generated Megafunction            ; /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/db/altsyncram_a1j1.tdf ;         ;
+; data.mif                         ; yes             ; Auto-Found Memory Initialization File  ; /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/data.mif               ;         ;
+; VRF.v                            ; yes             ; Auto-Found Verilog HDL File            ; /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/VRF.v                  ;         ;
+; register_32bit.v                 ; yes             ; Auto-Found Verilog HDL File            ; /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/register_32bit.v       ;         ;
++----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +------------------------------------------------------------+
@@ -226,16 +228,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+--------------+
 ; Resource                                    ; Usage        ;
 +---------------------------------------------+--------------+
-; Estimate of Logic utilization (ALMs needed) ; 154          ;
+; Estimate of Logic utilization (ALMs needed) ; 169          ;
 ;                                             ;              ;
-; Combinational ALUT usage for logic          ; 235          ;
-;     -- 7 input functions                    ; 1            ;
-;     -- 6 input functions                    ; 58           ;
-;     -- 5 input functions                    ; 44           ;
-;     -- 4 input functions                    ; 58           ;
-;     -- <=3 input functions                  ; 74           ;
+; Combinational ALUT usage for logic          ; 262          ;
+;     -- 7 input functions                    ; 2            ;
+;     -- 6 input functions                    ; 59           ;
+;     -- 5 input functions                    ; 54           ;
+;     -- 4 input functions                    ; 67           ;
+;     -- <=3 input functions                  ; 80           ;
 ;                                             ;              ;
-; Dedicated logic registers                   ; 97           ;
+; Dedicated logic registers                   ; 110          ;
 ;                                             ;              ;
 ; I/O pins                                    ; 67           ;
 ; Total MLAB memory bits                      ; 0            ;
@@ -244,9 +246,9 @@ refer to the applicable agreement for further details.
 ; Total DSP Blocks                            ; 0            ;
 ;                                             ;              ;
 ; Maximum fan-out node                        ; KEY[1]~input ;
-; Maximum fan-out                             ; 105          ;
-; Total fan-out                               ; 1617         ;
-; Average fan-out                             ; 3.41         ;
+; Maximum fan-out                             ; 118          ;
+; Total fan-out                               ; 1776         ;
+; Average fan-out                             ; 3.46         ;
 +---------------------------------------------+--------------+
 
 
@@ -255,9 +257,10 @@ refer to the applicable agreement for further details.
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                       ; Entity Name     ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |multicycle                                  ; 235 (18)            ; 97 (2)                    ; 2048              ; 0          ; 67   ; 0            ; |multicycle                                                                                               ; multicycle      ; work         ;
-;    |ALU:ALU|                                 ; 64 (64)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |multicycle|ALU:ALU                                                                                       ; ALU             ; work         ;
-;    |FSM:Control|                             ; 21 (21)             ; 15 (15)                   ; 0                 ; 0          ; 0    ; 0            ; |multicycle|FSM:Control                                                                                   ; FSM             ; work         ;
+; |multicycle                                  ; 262 (18)            ; 110 (2)                   ; 2048              ; 0          ; 67   ; 0            ; |multicycle                                                                                               ; multicycle      ; work         ;
+;    |ALU:ALUR2|                               ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |multicycle|ALU:ALUR2                                                                                     ; ALU             ; work         ;
+;    |ALU:ALU|                                 ; 58 (58)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |multicycle|ALU:ALU                                                                                       ; ALU             ; work         ;
+;    |FSM:Control|                             ; 43 (43)             ; 28 (28)                   ; 0                 ; 0          ; 0    ; 0            ; |multicycle|FSM:Control                                                                                   ; FSM             ; work         ;
 ;    |HEXs:HEX_display|                        ; 66 (24)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |multicycle|HEXs:HEX_display                                                                              ; HEXs            ; work         ;
 ;       |HEX:hex0|                             ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |multicycle|HEXs:HEX_display|HEX:hex0                                                                     ; HEX             ; work         ;
 ;       |HEX:hex1|                             ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |multicycle|HEXs:HEX_display|HEX:hex1                                                                     ; HEX             ; work         ;
@@ -265,7 +268,7 @@ refer to the applicable agreement for further details.
 ;       |HEX:hex3|                             ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |multicycle|HEXs:HEX_display|HEX:hex3                                                                     ; HEX             ; work         ;
 ;       |HEX:hex4|                             ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |multicycle|HEXs:HEX_display|HEX:hex4                                                                     ; HEX             ; work         ;
 ;       |HEX:hex5|                             ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |multicycle|HEXs:HEX_display|HEX:hex5                                                                     ; HEX             ; work         ;
-;    |RF:RF_block|                             ; 20 (20)             ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |multicycle|RF:RF_block                                                                                   ; RF              ; work         ;
+;    |RF:RF_block|                             ; 12 (12)             ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |multicycle|RF:RF_block                                                                                   ; RF              ; work         ;
 ;    |memory:DataMem|                          ; 8 (0)               ; 0 (0)                     ; 2048              ; 0          ; 0    ; 0            ; |multicycle|memory:DataMem                                                                                ; memory          ; work         ;
 ;       |DataMemory:inst|                      ; 0 (0)               ; 0 (0)                     ; 2048              ; 0          ; 0    ; 0            ; |multicycle|memory:DataMem|DataMemory:inst                                                                ; DataMemory      ; work         ;
 ;          |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 2048              ; 0          ; 0    ; 0            ; |multicycle|memory:DataMem|DataMemory:inst|altsyncram:altsyncram_component                                ; altsyncram      ; work         ;
@@ -274,8 +277,9 @@ refer to the applicable agreement for further details.
 ;    |mux2to1_2bit:R1Sel_mux|                  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |multicycle|mux2to1_2bit:R1Sel_mux                                                                        ; mux2to1_2bit    ; work         ;
 ;    |mux2to1_8bit:ALU1_mux|                   ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |multicycle|mux2to1_8bit:ALU1_mux                                                                         ; mux2to1_8bit    ; work         ;
 ;    |mux2to1_8bit:AddrSel_mux|                ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |multicycle|mux2to1_8bit:AddrSel_mux                                                                      ; mux2to1_8bit    ; work         ;
+;    |mux2to1_8bit:R2Mux|                      ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |multicycle|mux2to1_8bit:R2Mux                                                                            ; mux2to1_8bit    ; work         ;
 ;    |mux2to1_8bit:RegMux|                     ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |multicycle|mux2to1_8bit:RegMux                                                                           ; mux2to1_8bit    ; work         ;
-;    |mux5to1_8bit:ALU2_mux|                   ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |multicycle|mux5to1_8bit:ALU2_mux                                                                         ; mux5to1_8bit    ; work         ;
+;    |mux5to1_8bit:ALU2_mux|                   ; 15 (15)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |multicycle|mux5to1_8bit:ALU2_mux                                                                         ; mux5to1_8bit    ; work         ;
 ;    |register_8bit:ALUOut_reg|                ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |multicycle|register_8bit:ALUOut_reg                                                                      ; register_8bit   ; work         ;
 ;    |register_8bit:IR_reg|                    ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |multicycle|register_8bit:IR_reg                                                                          ; register_8bit   ; work         ;
 ;    |register_8bit:MDR_reg|                   ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |multicycle|register_8bit:MDR_reg                                                                         ; register_8bit   ; work         ;
@@ -296,46 +300,68 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 
 Encoding Type:  One-Hot
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |multicycle|FSM:Control|state                                                                                                                                                                                                                                  ;
-+----------------+---------------+--------------+-------------+--------------+----------------+---------------+---------------+--------------+--------------+--------------+----------------+----------------+--------------+----------+----------+---------------+--------------+
-; Name           ; state.c3_stop ; state.c3_bnz ; state.c3_bz ; state.c3_bpz ; state.c3_store ; state.c4_load ; state.c3_load ; state.c5_ori ; state.c4_ori ; state.c3_ori ; state.c3_shift ; state.c4_asnsh ; state.c3_asn ; state.c2 ; state.c1 ; state.reset_s ; state.c3_nop ;
-+----------------+---------------+--------------+-------------+--------------+----------------+---------------+---------------+--------------+--------------+--------------+----------------+----------------+--------------+----------+----------+---------------+--------------+
-; state.reset_s  ; 0             ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0            ; 0            ; 0            ; 0              ; 0              ; 0            ; 0        ; 0        ; 0             ; 0            ;
-; state.c1       ; 0             ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0            ; 0            ; 0            ; 0              ; 0              ; 0            ; 0        ; 1        ; 1             ; 0            ;
-; state.c2       ; 0             ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0            ; 0            ; 0            ; 0              ; 0              ; 0            ; 1        ; 0        ; 1             ; 0            ;
-; state.c3_asn   ; 0             ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0            ; 0            ; 0            ; 0              ; 0              ; 1            ; 0        ; 0        ; 1             ; 0            ;
-; state.c4_asnsh ; 0             ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0            ; 0            ; 0            ; 0              ; 1              ; 0            ; 0        ; 0        ; 1             ; 0            ;
-; state.c3_shift ; 0             ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0            ; 0            ; 0            ; 1              ; 0              ; 0            ; 0        ; 0        ; 1             ; 0            ;
-; state.c3_ori   ; 0             ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0            ; 0            ; 1            ; 0              ; 0              ; 0            ; 0        ; 0        ; 1             ; 0            ;
-; state.c4_ori   ; 0             ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0            ; 1            ; 0            ; 0              ; 0              ; 0            ; 0        ; 0        ; 1             ; 0            ;
-; state.c5_ori   ; 0             ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 1            ; 0            ; 0            ; 0              ; 0              ; 0            ; 0        ; 0        ; 1             ; 0            ;
-; state.c3_load  ; 0             ; 0            ; 0           ; 0            ; 0              ; 0             ; 1             ; 0            ; 0            ; 0            ; 0              ; 0              ; 0            ; 0        ; 0        ; 1             ; 0            ;
-; state.c4_load  ; 0             ; 0            ; 0           ; 0            ; 0              ; 1             ; 0             ; 0            ; 0            ; 0            ; 0              ; 0              ; 0            ; 0        ; 0        ; 1             ; 0            ;
-; state.c3_store ; 0             ; 0            ; 0           ; 0            ; 1              ; 0             ; 0             ; 0            ; 0            ; 0            ; 0              ; 0              ; 0            ; 0        ; 0        ; 1             ; 0            ;
-; state.c3_bpz   ; 0             ; 0            ; 0           ; 1            ; 0              ; 0             ; 0             ; 0            ; 0            ; 0            ; 0              ; 0              ; 0            ; 0        ; 0        ; 1             ; 0            ;
-; state.c3_bz    ; 0             ; 0            ; 1           ; 0            ; 0              ; 0             ; 0             ; 0            ; 0            ; 0            ; 0              ; 0              ; 0            ; 0        ; 0        ; 1             ; 0            ;
-; state.c3_bnz   ; 0             ; 1            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0            ; 0            ; 0            ; 0              ; 0              ; 0            ; 0        ; 0        ; 1             ; 0            ;
-; state.c3_stop  ; 1             ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0            ; 0            ; 0            ; 0              ; 0              ; 0            ; 0        ; 0        ; 1             ; 0            ;
-; state.c3_nop   ; 0             ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0            ; 0            ; 0            ; 0              ; 0              ; 0            ; 0        ; 0        ; 1             ; 1            ;
-+----------------+---------------+--------------+-------------+--------------+----------------+---------------+---------------+--------------+--------------+--------------+----------------+----------------+--------------+----------+----------+---------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |multicycle|FSM:Control|state                                                                                                                                                                                                                                                                                                                                                                                                                                ;
++-----------------+---------------+---------------+-----------------+-----------------+-----------------+-----------------+----------------+----------------+----------------+----------------+----------------+--------------+---------------+--------------+-------------+--------------+----------------+---------------+---------------+--------------+--------------+--------------+----------------+----------------+--------------+----------+----------+---------------+
+; Name            ; state.c4_vadd ; state.c3_vadd ; state.c6_vstore ; state.c5_vstore ; state.c4_vstore ; state.c3_vstore ; state.c7_vload ; state.c6_vload ; state.c5_vload ; state.c4_vload ; state.c3_vload ; state.c3_nop ; state.c3_stop ; state.c3_bnz ; state.c3_bz ; state.c3_bpz ; state.c3_store ; state.c4_load ; state.c3_load ; state.c5_ori ; state.c4_ori ; state.c3_ori ; state.c3_shift ; state.c4_asnsh ; state.c3_asn ; state.c2 ; state.c1 ; state.reset_s ;
++-----------------+---------------+---------------+-----------------+-----------------+-----------------+-----------------+----------------+----------------+----------------+----------------+----------------+--------------+---------------+--------------+-------------+--------------+----------------+---------------+---------------+--------------+--------------+--------------+----------------+----------------+--------------+----------+----------+---------------+
+; state.reset_s   ; 0             ; 0             ; 0               ; 0               ; 0               ; 0               ; 0              ; 0              ; 0              ; 0              ; 0              ; 0            ; 0             ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0            ; 0            ; 0            ; 0              ; 0              ; 0            ; 0        ; 0        ; 0             ;
+; state.c1        ; 0             ; 0             ; 0               ; 0               ; 0               ; 0               ; 0              ; 0              ; 0              ; 0              ; 0              ; 0            ; 0             ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0            ; 0            ; 0            ; 0              ; 0              ; 0            ; 0        ; 1        ; 1             ;
+; state.c2        ; 0             ; 0             ; 0               ; 0               ; 0               ; 0               ; 0              ; 0              ; 0              ; 0              ; 0              ; 0            ; 0             ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0            ; 0            ; 0            ; 0              ; 0              ; 0            ; 1        ; 0        ; 1             ;
+; state.c3_asn    ; 0             ; 0             ; 0               ; 0               ; 0               ; 0               ; 0              ; 0              ; 0              ; 0              ; 0              ; 0            ; 0             ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0            ; 0            ; 0            ; 0              ; 0              ; 1            ; 0        ; 0        ; 1             ;
+; state.c4_asnsh  ; 0             ; 0             ; 0               ; 0               ; 0               ; 0               ; 0              ; 0              ; 0              ; 0              ; 0              ; 0            ; 0             ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0            ; 0            ; 0            ; 0              ; 1              ; 0            ; 0        ; 0        ; 1             ;
+; state.c3_shift  ; 0             ; 0             ; 0               ; 0               ; 0               ; 0               ; 0              ; 0              ; 0              ; 0              ; 0              ; 0            ; 0             ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0            ; 0            ; 0            ; 1              ; 0              ; 0            ; 0        ; 0        ; 1             ;
+; state.c3_ori    ; 0             ; 0             ; 0               ; 0               ; 0               ; 0               ; 0              ; 0              ; 0              ; 0              ; 0              ; 0            ; 0             ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0            ; 0            ; 1            ; 0              ; 0              ; 0            ; 0        ; 0        ; 1             ;
+; state.c4_ori    ; 0             ; 0             ; 0               ; 0               ; 0               ; 0               ; 0              ; 0              ; 0              ; 0              ; 0              ; 0            ; 0             ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0            ; 1            ; 0            ; 0              ; 0              ; 0            ; 0        ; 0        ; 1             ;
+; state.c5_ori    ; 0             ; 0             ; 0               ; 0               ; 0               ; 0               ; 0              ; 0              ; 0              ; 0              ; 0              ; 0            ; 0             ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 1            ; 0            ; 0            ; 0              ; 0              ; 0            ; 0        ; 0        ; 1             ;
+; state.c3_load   ; 0             ; 0             ; 0               ; 0               ; 0               ; 0               ; 0              ; 0              ; 0              ; 0              ; 0              ; 0            ; 0             ; 0            ; 0           ; 0            ; 0              ; 0             ; 1             ; 0            ; 0            ; 0            ; 0              ; 0              ; 0            ; 0        ; 0        ; 1             ;
+; state.c4_load   ; 0             ; 0             ; 0               ; 0               ; 0               ; 0               ; 0              ; 0              ; 0              ; 0              ; 0              ; 0            ; 0             ; 0            ; 0           ; 0            ; 0              ; 1             ; 0             ; 0            ; 0            ; 0            ; 0              ; 0              ; 0            ; 0        ; 0        ; 1             ;
+; state.c3_store  ; 0             ; 0             ; 0               ; 0               ; 0               ; 0               ; 0              ; 0              ; 0              ; 0              ; 0              ; 0            ; 0             ; 0            ; 0           ; 0            ; 1              ; 0             ; 0             ; 0            ; 0            ; 0            ; 0              ; 0              ; 0            ; 0        ; 0        ; 1             ;
+; state.c3_bpz    ; 0             ; 0             ; 0               ; 0               ; 0               ; 0               ; 0              ; 0              ; 0              ; 0              ; 0              ; 0            ; 0             ; 0            ; 0           ; 1            ; 0              ; 0             ; 0             ; 0            ; 0            ; 0            ; 0              ; 0              ; 0            ; 0        ; 0        ; 1             ;
+; state.c3_bz     ; 0             ; 0             ; 0               ; 0               ; 0               ; 0               ; 0              ; 0              ; 0              ; 0              ; 0              ; 0            ; 0             ; 0            ; 1           ; 0            ; 0              ; 0             ; 0             ; 0            ; 0            ; 0            ; 0              ; 0              ; 0            ; 0        ; 0        ; 1             ;
+; state.c3_bnz    ; 0             ; 0             ; 0               ; 0               ; 0               ; 0               ; 0              ; 0              ; 0              ; 0              ; 0              ; 0            ; 0             ; 1            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0            ; 0            ; 0            ; 0              ; 0              ; 0            ; 0        ; 0        ; 1             ;
+; state.c3_stop   ; 0             ; 0             ; 0               ; 0               ; 0               ; 0               ; 0              ; 0              ; 0              ; 0              ; 0              ; 0            ; 1             ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0            ; 0            ; 0            ; 0              ; 0              ; 0            ; 0        ; 0        ; 1             ;
+; state.c3_nop    ; 0             ; 0             ; 0               ; 0               ; 0               ; 0               ; 0              ; 0              ; 0              ; 0              ; 0              ; 1            ; 0             ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0            ; 0            ; 0            ; 0              ; 0              ; 0            ; 0        ; 0        ; 1             ;
+; state.c3_vload  ; 0             ; 0             ; 0               ; 0               ; 0               ; 0               ; 0              ; 0              ; 0              ; 0              ; 1              ; 0            ; 0             ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0            ; 0            ; 0            ; 0              ; 0              ; 0            ; 0        ; 0        ; 1             ;
+; state.c4_vload  ; 0             ; 0             ; 0               ; 0               ; 0               ; 0               ; 0              ; 0              ; 0              ; 1              ; 0              ; 0            ; 0             ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0            ; 0            ; 0            ; 0              ; 0              ; 0            ; 0        ; 0        ; 1             ;
+; state.c5_vload  ; 0             ; 0             ; 0               ; 0               ; 0               ; 0               ; 0              ; 0              ; 1              ; 0              ; 0              ; 0            ; 0             ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0            ; 0            ; 0            ; 0              ; 0              ; 0            ; 0        ; 0        ; 1             ;
+; state.c6_vload  ; 0             ; 0             ; 0               ; 0               ; 0               ; 0               ; 0              ; 1              ; 0              ; 0              ; 0              ; 0            ; 0             ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0            ; 0            ; 0            ; 0              ; 0              ; 0            ; 0        ; 0        ; 1             ;
+; state.c7_vload  ; 0             ; 0             ; 0               ; 0               ; 0               ; 0               ; 1              ; 0              ; 0              ; 0              ; 0              ; 0            ; 0             ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0            ; 0            ; 0            ; 0              ; 0              ; 0            ; 0        ; 0        ; 1             ;
+; state.c3_vstore ; 0             ; 0             ; 0               ; 0               ; 0               ; 1               ; 0              ; 0              ; 0              ; 0              ; 0              ; 0            ; 0             ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0            ; 0            ; 0            ; 0              ; 0              ; 0            ; 0        ; 0        ; 1             ;
+; state.c4_vstore ; 0             ; 0             ; 0               ; 0               ; 1               ; 0               ; 0              ; 0              ; 0              ; 0              ; 0              ; 0            ; 0             ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0            ; 0            ; 0            ; 0              ; 0              ; 0            ; 0        ; 0        ; 1             ;
+; state.c5_vstore ; 0             ; 0             ; 0               ; 1               ; 0               ; 0               ; 0              ; 0              ; 0              ; 0              ; 0              ; 0            ; 0             ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0            ; 0            ; 0            ; 0              ; 0              ; 0            ; 0        ; 0        ; 1             ;
+; state.c6_vstore ; 0             ; 0             ; 1               ; 0               ; 0               ; 0               ; 0              ; 0              ; 0              ; 0              ; 0              ; 0            ; 0             ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0            ; 0            ; 0            ; 0              ; 0              ; 0            ; 0        ; 0        ; 1             ;
+; state.c3_vadd   ; 0             ; 1             ; 0               ; 0               ; 0               ; 0               ; 0              ; 0              ; 0              ; 0              ; 0              ; 0            ; 0             ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0            ; 0            ; 0            ; 0              ; 0              ; 0            ; 0        ; 0        ; 1             ;
+; state.c4_vadd   ; 1             ; 0             ; 0               ; 0               ; 0               ; 0               ; 0              ; 0              ; 0              ; 0              ; 0              ; 0            ; 0             ; 0            ; 0           ; 0            ; 0              ; 0             ; 0             ; 0            ; 0            ; 0            ; 0              ; 0              ; 0            ; 0        ; 0        ; 1             ;
++-----------------+---------------+---------------+-----------------+-----------------+-----------------+-----------------+----------------+----------------+----------------+----------------+----------------+--------------+---------------+--------------+-------------+--------------+----------------+---------------+---------------+--------------+--------------+--------------+----------------+----------------+--------------+----------+----------+---------------+
 
 
-+--------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                   ;
-+----------------------------------------+---------------------------------------------+
-; Register name                          ; Reason for Removal                          ;
-+----------------------------------------+---------------------------------------------+
-; register_32bit:X1|q[24..31]            ; Stuck at GND due to stuck port clock_enable ;
-; register_32bit:X1|q[0..23]             ; Lost fanout                                 ;
-; FSM:Control|state.reset_s              ; Lost fanout                                 ;
-; FSM:Control|state.c3_nop               ; Lost fanout                                 ;
-; FSM:Control|state~5                    ; Lost fanout                                 ;
-; FSM:Control|state~6                    ; Lost fanout                                 ;
-; FSM:Control|state~7                    ; Lost fanout                                 ;
-; FSM:Control|state~8                    ; Lost fanout                                 ;
-; Total Number of Removed Registers = 38 ;                                             ;
-+----------------------------------------+---------------------------------------------+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++----------------------------------------------------+----------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal  ; Free of Timing Hazards ;
++----------------------------------------------------+----------------------+------------------------+
+; FSM:Control|R2Sel                                  ; FSM:Control|WideOr12 ; yes                    ;
+; FSM:Control|R2Ld                                   ; FSM:Control|WideOr22 ; yes                    ;
+; Number of user-specified and inferred latches = 2  ;                      ;                        ;
++----------------------------------------------------+----------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; register_32bit:X1|q[16..31]            ; Stuck at GND due to stuck port data_in ;
+; register_32bit:X1|q[0..15]             ; Lost fanout                            ;
+; FSM:Control|state~6                    ; Lost fanout                            ;
+; FSM:Control|state~7                    ; Lost fanout                            ;
+; FSM:Control|state~8                    ; Lost fanout                            ;
+; FSM:Control|state~9                    ; Lost fanout                            ;
+; FSM:Control|state~10                   ; Lost fanout                            ;
+; Total Number of Removed Registers = 37 ;                                        ;
++----------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -343,10 +369,10 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 97    ;
+; Total registers                              ; 110   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 17    ;
-; Number of registers using Asynchronous Clear ; 97    ;
+; Number of registers using Synchronous Load   ; 25    ;
+; Number of registers using Asynchronous Clear ; 110   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 81    ;
 ; Number of registers using Preset             ; 0     ;
@@ -358,15 +384,16 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |multicycle|register_8bit:R2|q[1]      ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |multicycle|register_8bit:R1|q[2]      ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |multicycle|Mux4                       ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |multicycle|Mux5                       ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |multicycle|register_8bit:R1|q[0]      ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; Yes        ; |multicycle|register_8bit:R2|q[4]      ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |multicycle|Mux1                       ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |multicycle|Mux2                       ;
 ; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |multicycle|Mux7                       ;
 ; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |multicycle|mux5to1_8bit:ALU2_mux|Mux2 ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 15 LEs               ; 0 LEs                  ; No         ; |multicycle|FSM:Control|state          ;
 ; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |multicycle|mux5to1_8bit:ALU2_mux|Mux6 ;
 ; 12:1               ; 2 bits    ; 16 LEs        ; 14 LEs               ; 2 LEs                  ; No         ; |multicycle|ALU:ALU|tmp_out[3]         ;
-; 11:1               ; 2 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |multicycle|FSM:Control|state          ;
+; 12:1               ; 3 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |multicycle|FSM:Control|state          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
 
 
@@ -401,6 +428,17 @@ Encoding Type:  One-Hot
 ; c3_bnz         ; 01110 ; Unsigned Binary                 ;
 ; c3_stop        ; 01111 ; Unsigned Binary                 ;
 ; c3_nop         ; 10000 ; Unsigned Binary                 ;
+; c3_vload       ; 10001 ; Unsigned Binary                 ;
+; c4_vload       ; 10010 ; Unsigned Binary                 ;
+; c5_vload       ; 10011 ; Unsigned Binary                 ;
+; c6_vload       ; 10100 ; Unsigned Binary                 ;
+; c7_vload       ; 10101 ; Unsigned Binary                 ;
+; c3_vstore      ; 10110 ; Unsigned Binary                 ;
+; c4_vstore      ; 10111 ; Unsigned Binary                 ;
+; c5_vstore      ; 11000 ; Unsigned Binary                 ;
+; c6_vstore      ; 11001 ; Unsigned Binary                 ;
+; c3_vadd        ; 11010 ; Unsigned Binary                 ;
+; c4_vadd        ; 11011 ; Unsigned Binary                 ;
 +----------------+-------+---------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -544,48 +582,44 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "ALU:ALUV3"                                                                                                                                     ;
-+-------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type   ; Severity ; Details                                                                                                                                       ;
-+-------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; ALUOp ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (3 bits) it drives.  Extra input bit(s) "ALUOp[2..1]" will be connected to GND. ;
-; N     ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                      ;
-; Z     ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                      ;
-+-------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ALU:ALUV3"                                                                                               ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; N    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; Z    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "ALU:ALUV2"                                                                                                                                     ;
-+-------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type   ; Severity ; Details                                                                                                                                       ;
-+-------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; ALUOp ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (3 bits) it drives.  Extra input bit(s) "ALUOp[2..1]" will be connected to GND. ;
-; N     ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                      ;
-; Z     ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                      ;
-+-------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ALU:ALUV2"                                                                                               ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; N    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; Z    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "ALU:ALUV1"                                                                                                                                     ;
-+-------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type   ; Severity ; Details                                                                                                                                       ;
-+-------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; ALUOp ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (3 bits) it drives.  Extra input bit(s) "ALUOp[2..1]" will be connected to GND. ;
-; N     ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                      ;
-; Z     ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                      ;
-+-------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ALU:ALUV1"                                                                                               ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; N    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; Z    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "ALU:ALUV0"                                                                                                                                     ;
-+-------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type   ; Severity ; Details                                                                                                                                       ;
-+-------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; ALUOp ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (3 bits) it drives.  Extra input bit(s) "ALUOp[2..1]" will be connected to GND. ;
-; N     ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                      ;
-; Z     ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                      ;
-+-------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ALU:ALUV0"                                                                                               ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; N    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; Z    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------+
@@ -620,6 +654,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Port          ; Type   ; Severity ; Details                                                                             ;
 +---------------+--------+----------+-------------------------------------------------------------------------------------+
 ; cycle_counter ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; VRFwrite      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +---------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
@@ -628,29 +663,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 97                          ;
-;     CLR               ; 16                          ;
-;     ENA CLR           ; 64                          ;
-;     ENA CLR SLD       ; 17                          ;
-; arriav_lcell_comb     ; 241                         ;
-;     arith             ; 9                           ;
-;         1 data inputs ; 1                           ;
+; arriav_ff             ; 110                         ;
+;     CLR               ; 29                          ;
+;     ENA CLR           ; 56                          ;
+;     ENA CLR SLD       ; 25                          ;
+; arriav_lcell_comb     ; 268                         ;
+;     arith             ; 17                          ;
+;         1 data inputs ; 9                           ;
 ;         5 data inputs ; 8                           ;
-;     extend            ; 1                           ;
-;         7 data inputs ; 1                           ;
-;     normal            ; 231                         ;
+;     extend            ; 2                           ;
+;         7 data inputs ; 2                           ;
+;     normal            ; 249                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 6                           ;
-;         2 data inputs ; 28                          ;
-;         3 data inputs ; 44                          ;
-;         4 data inputs ; 58                          ;
-;         5 data inputs ; 36                          ;
-;         6 data inputs ; 58                          ;
+;         2 data inputs ; 32                          ;
+;         3 data inputs ; 38                          ;
+;         4 data inputs ; 67                          ;
+;         5 data inputs ; 46                          ;
+;         6 data inputs ; 59                          ;
 ; boundary_port         ; 67                          ;
 ; stratixv_ram_block    ; 8                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 3.37                        ;
+; Average LUT depth     ; 3.28                        ;
 +-----------------------+-----------------------------+
 
 
@@ -659,7 +694,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -668,61 +703,93 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
-    Info: Processing started: Mon Nov 28 17:45:30 2022
+    Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
+    Info: Processing started: Mon Dec  5 02:07:36 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off multicycle -c multicycle
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file register_8bit.v
-    Info (12023): Found entity 1: register_8bit File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/register_8bit.v Line: 4
+    Info (12023): Found entity 1: register_8bit File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/register_8bit.v Line: 4
 Info (12021): Found 1 design units, including 1 entities, in source file mux2to1_8bit.v
-    Info (12023): Found entity 1: mux2to1_8bit File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/mux2to1_8bit.v Line: 3
+    Info (12023): Found entity 1: mux2to1_8bit File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/mux2to1_8bit.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file mux2to1_2bit.v
-    Info (12023): Found entity 1: mux2to1_2bit File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/mux2to1_2bit.v Line: 3
+    Info (12023): Found entity 1: mux2to1_2bit File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/mux2to1_2bit.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file mux5to1_8bit.v
-    Info (12023): Found entity 1: mux5to1_8bit File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/mux5to1_8bit.v Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file dualmem.v
-    Info (12023): Found entity 1: DualMem File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/DualMem.v Line: 39
+    Info (12023): Found entity 1: mux5to1_8bit File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/mux5to1_8bit.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file DualMem.v
+    Info (12023): Found entity 1: DualMem File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/DualMem.v Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file multicycle.v
-    Info (12023): Found entity 1: multicycle File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 27
-Info (12021): Found 1 design units, including 1 entities, in source file datamemory.v
-    Info (12023): Found entity 1: DataMemory File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/DataMemory.v Line: 39
-Info (12021): Found 1 design units, including 1 entities, in source file alu.v
-    Info (12023): Found entity 1: ALU File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/ALU.v Line: 23
-Info (12021): Found 1 design units, including 1 entities, in source file rf.v
-    Info (12023): Found entity 1: RF File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/RF.v Line: 26
+    Info (12023): Found entity 1: multicycle File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.v Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file DataMemory.v
+    Info (12023): Found entity 1: DataMemory File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/DataMemory.v Line: 39
+Info (12021): Found 1 design units, including 1 entities, in source file ALU.v
+    Info (12023): Found entity 1: ALU File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/ALU.v Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file RF.v
+    Info (12023): Found entity 1: RF File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/RF.v Line: 26
 Info (12021): Found 2 design units, including 2 entities, in source file extend.v
-    Info (12023): Found entity 1: zExtend File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/extend.v Line: 29
-    Info (12023): Found entity 2: sExtend File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/extend.v Line: 38
-Info (12021): Found 3 design units, including 3 entities, in source file hex.v
-    Info (12023): Found entity 1: chooseHEXs File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/HEX.v Line: 29
-    Info (12023): Found entity 2: HEXs File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/HEX.v Line: 59
-    Info (12023): Found entity 3: HEX File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/HEX.v Line: 108
-Info (12021): Found 1 design units, including 1 entities, in source file fsm.v
-    Info (12023): Found entity 1: FSM File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/FSM.v Line: 20
+    Info (12023): Found entity 1: zExtend File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/extend.v Line: 29
+    Info (12023): Found entity 2: sExtend File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/extend.v Line: 38
+Info (12021): Found 3 design units, including 3 entities, in source file HEX.v
+    Info (12023): Found entity 1: chooseHEXs File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/HEX.v Line: 29
+    Info (12023): Found entity 2: HEXs File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/HEX.v Line: 59
+    Info (12023): Found entity 3: HEX File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/HEX.v Line: 108
+Info (12021): Found 1 design units, including 1 entities, in source file FSM.v
+    Info (12023): Found entity 1: FSM File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 20
 Info (12021): Found 1 design units, including 1 entities, in source file memory.bdf
     Info (12023): Found entity 1: memory
-Warning (10236): Verilog HDL Implicit Net warning at multicycle.v(180): created implicit net for "VRFWrite" File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 180
+Warning (10236): Verilog HDL Implicit Net warning at multicycle.v(123): created implicit net for "R2Ld" File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.v Line: 123
+Warning (10236): Verilog HDL Implicit Net warning at multicycle.v(184): created implicit net for "VRFWrite" File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.v Line: 184
 Info (12127): Elaborating entity "multicycle" for the top level hierarchy
-Warning (10034): Output port "LEDR[17..10]" at multicycle.v(38) has no driver File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 38
-Info (12128): Elaborating entity "HEXs" for hierarchy "HEXs:HEX_display" File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 87
-Warning (10235): Verilog HDL Always Construct warning at HEX.v(81): variable "in0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/HEX.v Line: 81
-Warning (10235): Verilog HDL Always Construct warning at HEX.v(82): variable "in0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/HEX.v Line: 82
-Warning (10235): Verilog HDL Always Construct warning at HEX.v(89): variable "in1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/HEX.v Line: 89
-Warning (10235): Verilog HDL Always Construct warning at HEX.v(90): variable "in1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/HEX.v Line: 90
-Warning (10235): Verilog HDL Always Construct warning at HEX.v(91): variable "in2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/HEX.v Line: 91
-Warning (10235): Verilog HDL Always Construct warning at HEX.v(92): variable "in2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/HEX.v Line: 92
-Warning (10235): Verilog HDL Always Construct warning at HEX.v(93): variable "in3" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/HEX.v Line: 93
-Warning (10235): Verilog HDL Always Construct warning at HEX.v(94): variable "in3" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/HEX.v Line: 94
-Info (12128): Elaborating entity "HEX" for hierarchy "HEXs:HEX_display|HEX:hex0" File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/HEX.v Line: 99
-Info (12128): Elaborating entity "FSM" for hierarchy "FSM:Control" File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 120
-Warning (10230): Verilog HDL assignment warning at FSM.v(98): truncated value with size 32 to match size of target (16) File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/FSM.v Line: 98
-Info (12128): Elaborating entity "memory" for hierarchy "memory:DataMem" File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 125
+Warning (10034): Output port "LEDR[17..10]" at multicycle.v(38) has no driver File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.v Line: 38
+Info (12128): Elaborating entity "HEXs" for hierarchy "HEXs:HEX_display" File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.v Line: 87
+Warning (10235): Verilog HDL Always Construct warning at HEX.v(81): variable "in0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/HEX.v Line: 81
+Warning (10235): Verilog HDL Always Construct warning at HEX.v(82): variable "in0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/HEX.v Line: 82
+Warning (10235): Verilog HDL Always Construct warning at HEX.v(89): variable "in1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/HEX.v Line: 89
+Warning (10235): Verilog HDL Always Construct warning at HEX.v(90): variable "in1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/HEX.v Line: 90
+Warning (10235): Verilog HDL Always Construct warning at HEX.v(91): variable "in2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/HEX.v Line: 91
+Warning (10235): Verilog HDL Always Construct warning at HEX.v(92): variable "in2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/HEX.v Line: 92
+Warning (10235): Verilog HDL Always Construct warning at HEX.v(93): variable "in3" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/HEX.v Line: 93
+Warning (10235): Verilog HDL Always Construct warning at HEX.v(94): variable "in3" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/HEX.v Line: 94
+Info (12128): Elaborating entity "HEX" for hierarchy "HEXs:HEX_display|HEX:hex0" File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/HEX.v Line: 99
+Info (12128): Elaborating entity "FSM" for hierarchy "FSM:Control" File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.v Line: 124
+Warning (10230): Verilog HDL assignment warning at FSM.v(134): truncated value with size 32 to match size of target (16) File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 134
+Warning (10230): Verilog HDL assignment warning at FSM.v(416): truncated value with size 32 to match size of target (1) File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 416
+Warning (10230): Verilog HDL assignment warning at FSM.v(754): truncated value with size 32 to match size of target (1) File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 754
+Warning (10230): Verilog HDL assignment warning at FSM.v(785): truncated value with size 32 to match size of target (1) File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 785
+Warning (10230): Verilog HDL assignment warning at FSM.v(817): truncated value with size 32 to match size of target (1) File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 817
+Warning (10230): Verilog HDL assignment warning at FSM.v(849): truncated value with size 32 to match size of target (1) File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 849
+Warning (10240): Verilog HDL Always Construct warning at FSM.v(141): inferring latch(es) for variable "VRFwrite", which holds its previous value in one or more paths through the always construct File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 141
+Warning (10240): Verilog HDL Always Construct warning at FSM.v(141): inferring latch(es) for variable "X1Load", which holds its previous value in one or more paths through the always construct File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 141
+Warning (10240): Verilog HDL Always Construct warning at FSM.v(141): inferring latch(es) for variable "X2Load", which holds its previous value in one or more paths through the always construct File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 141
+Warning (10240): Verilog HDL Always Construct warning at FSM.v(141): inferring latch(es) for variable "MemIn", which holds its previous value in one or more paths through the always construct File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 141
+Warning (10240): Verilog HDL Always Construct warning at FSM.v(141): inferring latch(es) for variable "T0Ld", which holds its previous value in one or more paths through the always construct File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 141
+Warning (10240): Verilog HDL Always Construct warning at FSM.v(141): inferring latch(es) for variable "T1Ld", which holds its previous value in one or more paths through the always construct File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 141
+Warning (10240): Verilog HDL Always Construct warning at FSM.v(141): inferring latch(es) for variable "T2Ld", which holds its previous value in one or more paths through the always construct File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 141
+Warning (10240): Verilog HDL Always Construct warning at FSM.v(141): inferring latch(es) for variable "T3Ld", which holds its previous value in one or more paths through the always construct File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 141
+Warning (10240): Verilog HDL Always Construct warning at FSM.v(141): inferring latch(es) for variable "VoutSel", which holds its previous value in one or more paths through the always construct File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 141
+Warning (10240): Verilog HDL Always Construct warning at FSM.v(141): inferring latch(es) for variable "R2Sel", which holds its previous value in one or more paths through the always construct File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 141
+Warning (10240): Verilog HDL Always Construct warning at FSM.v(141): inferring latch(es) for variable "R2Ld", which holds its previous value in one or more paths through the always construct File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 141
+Warning (10240): Verilog HDL Always Construct warning at FSM.v(141): inferring latch(es) for variable "ALUVOp", which holds its previous value in one or more paths through the always construct File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 141
+Info (10041): Inferred latch for "ALUVOp[0]" at FSM.v(141) File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 141
+Info (10041): Inferred latch for "ALUVOp[1]" at FSM.v(141) File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 141
+Info (10041): Inferred latch for "ALUVOp[2]" at FSM.v(141) File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 141
+Info (10041): Inferred latch for "R2Ld" at FSM.v(141) File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 141
+Info (10041): Inferred latch for "R2Sel" at FSM.v(141) File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 141
+Info (10041): Inferred latch for "VoutSel" at FSM.v(141) File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 141
+Info (10041): Inferred latch for "T3Ld" at FSM.v(141) File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 141
+Info (10041): Inferred latch for "T2Ld" at FSM.v(141) File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 141
+Info (10041): Inferred latch for "T1Ld" at FSM.v(141) File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 141
+Info (10041): Inferred latch for "T0Ld" at FSM.v(141) File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 141
+Info (10041): Inferred latch for "MemIn" at FSM.v(141) File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 141
+Info (10041): Inferred latch for "X2Load" at FSM.v(141) File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 141
+Info (10041): Inferred latch for "X1Load" at FSM.v(141) File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 141
+Info (10041): Inferred latch for "VRFwrite" at FSM.v(141) File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 141
+Info (12128): Elaborating entity "memory" for hierarchy "memory:DataMem" File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.v Line: 129
 Info (12128): Elaborating entity "mux2to1_8bit" for hierarchy "memory:DataMem|mux2to1_8bit:inst3"
 Info (12128): Elaborating entity "DataMemory" for hierarchy "memory:DataMem|DataMemory:inst"
-Info (12128): Elaborating entity "altsyncram" for hierarchy "memory:DataMem|DataMemory:inst|altsyncram:altsyncram_component" File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/DataMemory.v Line: 78
-Info (12130): Elaborated megafunction instantiation "memory:DataMem|DataMemory:inst|altsyncram:altsyncram_component" File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/DataMemory.v Line: 78
-Info (12133): Instantiated megafunction "memory:DataMem|DataMemory:inst|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/DataMemory.v Line: 78
+Info (12128): Elaborating entity "altsyncram" for hierarchy "memory:DataMem|DataMemory:inst|altsyncram:altsyncram_component" File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/DataMemory.v Line: 78
+Info (12130): Elaborated megafunction instantiation "memory:DataMem|DataMemory:inst|altsyncram:altsyncram_component" File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/DataMemory.v Line: 78
+Info (12133): Instantiated megafunction "memory:DataMem|DataMemory:inst|altsyncram:altsyncram_component" with the following parameter: File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/DataMemory.v Line: 78
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
     Info (12134): Parameter "init_file" = "data.mif"
@@ -738,82 +805,44 @@ Info (12133): Instantiated megafunction "memory:DataMem|DataMemory:inst|altsyncr
     Info (12134): Parameter "width_a" = "8"
     Info (12134): Parameter "width_byteena_a" = "1"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_a1j1.tdf
-    Info (12023): Found entity 1: altsyncram_a1j1 File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/db/altsyncram_a1j1.tdf Line: 27
-Info (12128): Elaborating entity "altsyncram_a1j1" for hierarchy "memory:DataMem|DataMemory:inst|altsyncram:altsyncram_component|altsyncram_a1j1:auto_generated" File: c:/desl/quartus18/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Info (12128): Elaborating entity "ALU" for hierarchy "ALU:ALU" File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 130
-Info (12128): Elaborating entity "RF" for hierarchy "RF:RF_block" File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 137
-Info (12128): Elaborating entity "register_8bit" for hierarchy "register_8bit:IR_reg" File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 142
-Warning (12125): Using design file vrf.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: VRF File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/vrf.v Line: 1
-Warning (10236): Verilog HDL Implicit Net warning at vrf.v(60): created implicit net for "data1" File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/vrf.v Line: 60
-Warning (10236): Verilog HDL Implicit Net warning at vrf.v(61): created implicit net for "data2" File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/vrf.v Line: 61
-Info (12128): Elaborating entity "VRF" for hierarchy "VRF:VRF_block" File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 184
-Warning (10036): Verilog HDL or VHDL warning at vrf.v(60): object "data1" assigned a value but never read File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/vrf.v Line: 60
-Warning (10036): Verilog HDL or VHDL warning at vrf.v(61): object "data2" assigned a value but never read File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/vrf.v Line: 61
-Warning (10230): Verilog HDL assignment warning at vrf.v(60): truncated value with size 32 to match size of target (1) File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/vrf.v Line: 60
-Warning (10230): Verilog HDL assignment warning at vrf.v(61): truncated value with size 32 to match size of target (1) File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/vrf.v Line: 61
-Warning (10034): Output port "vdata1" at vrf.v(8) has no driver File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/vrf.v Line: 8
-Warning (10034): Output port "vdata2" at vrf.v(8) has no driver File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/vrf.v Line: 8
+    Info (12023): Found entity 1: altsyncram_a1j1 File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/db/altsyncram_a1j1.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_a1j1" for hierarchy "memory:DataMem|DataMemory:inst|altsyncram:altsyncram_component|altsyncram_a1j1:auto_generated" File: /opt/intelFPGA/21.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:ALU" File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.v Line: 134
+Info (12128): Elaborating entity "RF" for hierarchy "RF:RF_block" File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.v Line: 141
+Info (12128): Elaborating entity "register_8bit" for hierarchy "register_8bit:IR_reg" File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.v Line: 146
+Warning (12125): Using design file VRF.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: VRF File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/VRF.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at VRF.v(60): created implicit net for "data1" File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/VRF.v Line: 60
+Warning (10236): Verilog HDL Implicit Net warning at VRF.v(61): created implicit net for "data2" File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/VRF.v Line: 61
+Info (12128): Elaborating entity "VRF" for hierarchy "VRF:VRF_block" File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.v Line: 188
+Warning (10036): Verilog HDL or VHDL warning at VRF.v(60): object "data1" assigned a value but never read File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/VRF.v Line: 60
+Warning (10036): Verilog HDL or VHDL warning at VRF.v(61): object "data2" assigned a value but never read File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/VRF.v Line: 61
+Warning (10230): Verilog HDL assignment warning at VRF.v(60): truncated value with size 32 to match size of target (1) File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/VRF.v Line: 60
+Warning (10230): Verilog HDL assignment warning at VRF.v(61): truncated value with size 32 to match size of target (1) File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/VRF.v Line: 61
+Warning (10034): Output port "vdata1" at VRF.v(8) has no driver File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/VRF.v Line: 8
+Warning (10034): Output port "vdata2" at VRF.v(8) has no driver File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/VRF.v Line: 8
 Warning (12125): Using design file register_32bit.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: register_32bit File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/register_32bit.v Line: 5
-Info (12128): Elaborating entity "register_32bit" for hierarchy "register_32bit:X1" File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 190
-Info (12128): Elaborating entity "mux5to1_8bit" for hierarchy "mux5to1_8bit:MemMux" File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 278
-Info (12128): Elaborating entity "mux2to1_2bit" for hierarchy "mux2to1_2bit:R1Sel_mux" File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 292
-Info (12128): Elaborating entity "sExtend" for hierarchy "sExtend:SE4" File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 314
-Info (12128): Elaborating entity "zExtend" for hierarchy "zExtend:ZE3" File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 315
-Info (12128): Elaborating entity "zExtend" for hierarchy "zExtend:ZE5" File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 316
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "VoutSel" is missing source, defaulting to GND File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 56
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "VoutSel" is missing source, defaulting to GND File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 56
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "VoutSel" is missing source, defaulting to GND File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 56
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "VoutSel" is missing source, defaulting to GND File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 56
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "VoutSel" is missing source, defaulting to GND File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 56
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "VoutSel" is missing source, defaulting to GND File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 56
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "VoutSel" is missing source, defaulting to GND File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 56
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "VoutSel" is missing source, defaulting to GND File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 56
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "VoutSel" is missing source, defaulting to GND File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 56
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "VoutSel" is missing source, defaulting to GND File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 56
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "VoutSel" is missing source, defaulting to GND File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 56
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "VoutSel" is missing source, defaulting to GND File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 56
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "VoutSel" is missing source, defaulting to GND File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 56
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "VoutSel" is missing source, defaulting to GND File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 56
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "VoutSel" is missing source, defaulting to GND File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 56
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "VoutSel" is missing source, defaulting to GND File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 56
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "VoutSel" is missing source, defaulting to GND File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 56
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "VoutSel" is missing source, defaulting to GND File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 56
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "VoutSel" is missing source, defaulting to GND File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 56
-Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "VoutSel" is missing source, defaulting to GND File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 56
+    Info (12023): Found entity 1: register_32bit File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/register_32bit.v Line: 5
+Info (12128): Elaborating entity "register_32bit" for hierarchy "register_32bit:X1" File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.v Line: 194
+Info (12128): Elaborating entity "mux5to1_8bit" for hierarchy "mux5to1_8bit:MemMux" File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.v Line: 282
+Info (12128): Elaborating entity "mux2to1_2bit" for hierarchy "mux2to1_2bit:R1Sel_mux" File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.v Line: 296
+Info (12128): Elaborating entity "sExtend" for hierarchy "sExtend:SE4" File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.v Line: 318
+Info (12128): Elaborating entity "zExtend" for hierarchy "zExtend:ZE3" File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.v Line: 319
+Info (12128): Elaborating entity "zExtend" for hierarchy "zExtend:ZE5" File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.v Line: 320
 Warning (12241): 6 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13012): Latch FSM:Control|R2Sel has unsafe behavior File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 41
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal FSM:Control|state.c3_vload File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 52
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[10]" is stuck at GND File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 38
-    Warning (13410): Pin "LEDR[11]" is stuck at GND File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 38
-    Warning (13410): Pin "LEDR[12]" is stuck at GND File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 38
-    Warning (13410): Pin "LEDR[13]" is stuck at GND File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 38
-    Warning (13410): Pin "LEDR[14]" is stuck at GND File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 38
-    Warning (13410): Pin "LEDR[15]" is stuck at GND File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 38
-    Warning (13410): Pin "LEDR[16]" is stuck at GND File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 38
-    Warning (13410): Pin "LEDR[17]" is stuck at GND File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 38
+    Warning (13410): Pin "LEDR[10]" is stuck at GND File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.v Line: 38
+    Warning (13410): Pin "LEDR[11]" is stuck at GND File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.v Line: 38
+    Warning (13410): Pin "LEDR[12]" is stuck at GND File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.v Line: 38
+    Warning (13410): Pin "LEDR[13]" is stuck at GND File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.v Line: 38
+    Warning (13410): Pin "LEDR[14]" is stuck at GND File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.v Line: 38
+    Warning (13410): Pin "LEDR[15]" is stuck at GND File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.v Line: 38
+    Warning (13410): Pin "LEDR[16]" is stuck at GND File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.v Line: 38
+    Warning (13410): Pin "LEDR[17]" is stuck at GND File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.v Line: 38
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 30 registers lost all their fanouts during netlist optimizations.
+Info (17049): 21 registers lost all their fanouts during netlist optimizations.
 Warning (20013): Ignored 571 assignments for entity "DE1_SoC" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[0] -entity DE1_SoC was ignored
     Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[10] -entity DE1_SoC was ignored
@@ -1386,27 +1415,27 @@ Warning (20013): Ignored 571 assignments for entity "DE1_SoC" -- entity does not
     Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[9] -entity DE1_SoC was ignored
     Warning (20014): Assignment for entity set_instance_assignment -name D5_DELAY 2 -to HPS_DDR3_CK_N -entity DE1_SoC was ignored
     Warning (20014): Assignment for entity set_instance_assignment -name D5_DELAY 2 -to HPS_DDR3_CK_P -entity DE1_SoC was ignored
-Info (144001): Generated suppressed messages file C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.map.smsg
+Info (144001): Generated suppressed messages file /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 35
-    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.v Line: 35
-Info (21057): Implemented 379 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "SW[1]" File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.v Line: 35
+    Warning (15610): No output dependent on input pin "SW[2]" File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.v Line: 35
+Info (21057): Implemented 414 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 7 input pins
     Info (21059): Implemented 60 output pins
-    Info (21061): Implemented 304 logic cells
+    Info (21061): Implemented 339 logic cells
     Info (21064): Implemented 8 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 647 warnings
-    Info: Peak virtual memory: 4862 megabytes
-    Info: Processing ended: Mon Nov 28 17:45:39 2022
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:18
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 627 warnings
+    Info: Peak virtual memory: 492 megabytes
+    Info: Processing ended: Mon Dec  5 02:07:48 2022
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:29
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/Users/zhan9947/352/ECE352_Project/processor_v3_verilog/multicycle.map.smsg.
+The suppressed messages can be found in /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.map.smsg.
 
 

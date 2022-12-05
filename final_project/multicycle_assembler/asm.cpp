@@ -22,7 +22,7 @@ Change F.Martin del Campo - Nov 2015: Added cstring library and changed b and e 
 using namespace std;
 
 #define MEM_SIZE 256
-#define NUM_KEYWORDS 16
+#define NUM_KEYWORDS 19
 
 typedef struct instruction
 {
@@ -36,7 +36,7 @@ bool isKeyword(string str)
 {
 	string keywords[NUM_KEYWORDS] = {"load", "store", "add", "sub", "nand", "ori",
 						  "shift", "shiftl", "shiftr", "bz", "bnz", "bpz",
-					 "org", "db", "stop", "nop"};
+					 "org", "db", "stop", "nop", "vload", "vstore", "vadd"};
 
 	for (int i = 0; i < NUM_KEYWORDS; i++)
 	{
@@ -519,11 +519,38 @@ int main(int argc, char* argv[])
 			}
 			else if (col2 == "stop")
 			  {
-			    encoding = 1;
+			    encoding = 0b00000001;
 			  }
 			else if (col2 == "nop")
 			  {
-			    encoding = 10;
+			    encoding = 0b10000001;
+			  }
+			else if (col2 == "vadd")
+			{
+				if (!extractOperands(col3, op1, op2))
+					throw "parse error";
+				encoding = 0;
+				encoding = op1 << 6;
+				encoding += op2 << 4;
+				encoding |= 0b1110;
+			  }
+			else if (col2 == "vload")
+			  {
+				if (!extractOperands(col3, op1, op2))
+					throw "parse error";
+				encoding = 0;
+				encoding = op1 << 6;
+				encoding += op2 << 4;
+				encoding |= 0b1010;
+				}
+			else if (col2 == "vstore")
+			  {
+				if (!extractOperands(col3, op1, op2))
+					throw "parse error";
+				encoding = 0;
+				encoding = op1 << 6;
+				encoding += op2 << 4;
+				encoding |= 0b1100;
 			  }
 			
 			mem[cur_address] = (char) encoding;

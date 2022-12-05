@@ -59,4 +59,3 @@ loop1	store	k0,(k2)	; store value of k0 to memory
 
 	org	64
 lbl	db	120
-

@@ -3,51 +3,147 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 85C Model Setup 'KEY[1]'
-Slack : -5.114
-TNS   : -274.193
+Slack : -11.997
+TNS   : -576.394
+
+Type  : Slow 1100mV 85C Model Setup 'FSM:Control|state.c2'
+Slack : -8.975
+TNS   : -8.975
+
+Type  : Slow 1100mV 85C Model Setup 'FSM:Control|state.c1'
+Slack : -7.253
+TNS   : -7.253
 
 Type  : Slow 1100mV 85C Model Hold 'KEY[1]'
-Slack : 0.312
+Slack : -7.336
+TNS   : -308.202
+
+Type  : Slow 1100mV 85C Model Hold 'FSM:Control|state.c1'
+Slack : 3.519
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'FSM:Control|state.c2'
+Slack : 5.407
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'KEY[1]'
 Slack : -2.174
-TNS   : -132.766
+TNS   : -135.844
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'FSM:Control|state.c1'
+Slack : 0.318
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'FSM:Control|state.c2'
+Slack : 0.418
+TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Setup 'KEY[1]'
-Slack : -5.109
-TNS   : -267.746
+Slack : -11.583
+TNS   : -555.031
+
+Type  : Slow 1100mV 0C Model Setup 'FSM:Control|state.c2'
+Slack : -8.843
+TNS   : -8.843
+
+Type  : Slow 1100mV 0C Model Setup 'FSM:Control|state.c1'
+Slack : -7.210
+TNS   : -7.210
 
 Type  : Slow 1100mV 0C Model Hold 'KEY[1]'
-Slack : 0.290
+Slack : -7.189
+TNS   : -312.376
+
+Type  : Slow 1100mV 0C Model Hold 'FSM:Control|state.c1'
+Slack : 3.480
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'FSM:Control|state.c2'
+Slack : 5.283
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'KEY[1]'
 Slack : -2.174
-TNS   : -127.437
+TNS   : -130.567
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'FSM:Control|state.c1'
+Slack : 0.345
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'FSM:Control|state.c2'
+Slack : 0.460
+TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Setup 'KEY[1]'
-Slack : -2.751
-TNS   : -132.473
+Slack : -7.750
+TNS   : -339.768
+
+Type  : Fast 1100mV 85C Model Setup 'FSM:Control|state.c2'
+Slack : -4.701
+TNS   : -4.701
+
+Type  : Fast 1100mV 85C Model Setup 'FSM:Control|state.c1'
+Slack : -3.431
+TNS   : -3.431
 
 Type  : Fast 1100mV 85C Model Hold 'KEY[1]'
-Slack : 0.195
+Slack : -4.059
+TNS   : -158.356
+
+Type  : Fast 1100mV 85C Model Hold 'FSM:Control|state.c1'
+Slack : 1.937
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'FSM:Control|state.c2'
+Slack : 3.252
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'KEY[1]'
 Slack : -2.174
-TNS   : -94.129
+TNS   : -94.870
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'FSM:Control|state.c1'
+Slack : 0.304
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'FSM:Control|state.c2'
+Slack : 0.453
+TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'KEY[1]'
-Slack : -2.369
-TNS   : -114.472
+Slack : -6.714
+TNS   : -294.301
+
+Type  : Fast 1100mV 0C Model Setup 'FSM:Control|state.c2'
+Slack : -4.496
+TNS   : -4.496
+
+Type  : Fast 1100mV 0C Model Setup 'FSM:Control|state.c1'
+Slack : -3.327
+TNS   : -3.327
 
 Type  : Fast 1100mV 0C Model Hold 'KEY[1]'
-Slack : 0.175
+Slack : -3.945
+TNS   : -167.225
+
+Type  : Fast 1100mV 0C Model Hold 'FSM:Control|state.c1'
+Slack : 1.907
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'FSM:Control|state.c2'
+Slack : 3.120
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'KEY[1]'
 Slack : -2.174
-TNS   : -91.832
+TNS   : -92.784
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'FSM:Control|state.c1'
+Slack : 0.339
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'FSM:Control|state.c2'
+Slack : 0.465
+TNS   : 0.000
 
 ------------------------------------------------------------

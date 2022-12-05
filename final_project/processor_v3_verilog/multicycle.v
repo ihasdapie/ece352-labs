@@ -51,7 +51,7 @@ wire 	X1Load, X2Load;
 wire 	[31:0] V1Wire, V2Wire, vdataw;
 
 wire	[7:0] ALUV0wire, ALUV1wire, ALUV2wire, ALUV3wire;
-wire 	ALUV0Op, ALUV1Op, ALUV2Op, ALUV3Op;
+wire 	[2:0] ALUVOp;
 
 wire 	VoutSel;
 
@@ -116,7 +116,11 @@ FSM		Control(
 	.PCwrite(PCWrite),.AddrSel(AddrSel),.MemRead(MemRead),.MemWrite(MemWrite),
 	.IRload(IRLoad),.R1Sel(R1Sel),.MDRload(MDRLoad),.R1R2Load(R1R2Load),
 	.ALU1(ALU1),.ALUOutWrite(ALUOutWrite),.RFWrite(RFWrite),.RegIn(RegIn),
-	.FlagWrite(FlagWrite),.ALU2(ALU2),.ALUop(ALUOp), .cycle_counter(cycle_counter)
+	.FlagWrite(FlagWrite),.ALU2(ALU2),.ALUop(ALUOp), .cycle_counter(cycle_counter),
+	// vector signals
+	.MemIn(MemIn), .VRFwrite(VRFwrite), .X1Load(X1Load), .X2Load(X2Load),
+	.T0Ld(T0Ld), .T1Ld(T1Ld), .T2Ld(T2Ld), .T3Ld(T3Ld), .VoutSel(VoutSel),
+	.R2Sel(R2Sel), .R2Ld(R2Ld), .ALUVOp(ALUVOp)
 );
 
 memory	DataMem(
@@ -157,7 +161,7 @@ register_8bit	R1(
 );
 
 register_8bit	R2(
-	.clock(clock),.aclr(reset),.enable(R1R2Load),
+	.clock(clock),.aclr(reset),.enable(R2Ld),
 	.data(R2MuxOut),.q(R2wire)
 );
 
@@ -170,7 +174,7 @@ mux2to1_8bit 		R2Mux(
 
 ALU		ALUR2(
 	.in1(R2wire),.in2(8'b1),.out(ALUR2Out),
-	.ALUOp(1'b0) // always add (1) 
+	.ALUOp(1'b0) // always add (0) 
 );
 
 
@@ -198,24 +202,24 @@ register_32bit	X2(
 
 ALU		ALUV0(
 	.in1(V1Wire[31:24]),.in2(V2Wire[31:24]),.out(ALUV0wire),
-	.ALUOp(ALUV0Op)
+	.ALUOp(ALUVOp)
 );
 
 ALU		ALUV1(
 	.in1(V1Wire[23:16]),.in2(V2Wire[23:16]),.out(ALUV1wire),
-	.ALUOp(ALUV1Op)
+	.ALUOp(ALUVOp)
 );
 
 
 ALU		ALUV2(
 	.in1(V1Wire[15:8]),.in2(V2Wire[15:8]),.out(ALUV2wire),
-	.ALUOp(ALUV2Op)
+	.ALUOp(ALUVOp)
 );
 
 
 ALU		ALUV3(
 	.in1(V1Wire[7:0]),.in2(V2Wire[7:0]),.out(ALUV3wire),
-	.ALUOp(ALUV3Op)
+	.ALUOp(ALUVOp)
 );
 
 
