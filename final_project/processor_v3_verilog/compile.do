@@ -4,6 +4,8 @@ vlog -vlog01compat -work work multicycle.v
 vlog -vlog01compat -work work mux2to1_8bit.v
 vlog -vlog01compat -work work mux2to1_2bit.v
 vlog -vlog01compat -work work mux5to1_8bit.v
+vlog -vlog01compat -work work VRF.v
+vlog -vlog01compat -work work register_32bit.v
 vlog -vlog01compat -work work memory.v
 vlog -vlog01compat -work work DualMem.v
 vlog -vlog01compat -work work DataMemory.v

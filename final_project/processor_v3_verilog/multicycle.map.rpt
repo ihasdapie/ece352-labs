@@ -1,5 +1,5 @@
 Analysis & Synthesis report for multicycle
-Mon Dec  5 02:07:48 2022
+Mon Dec  5 15:46:09 2022
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -28,18 +28,17 @@ Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
  20. altsyncram Parameter Settings by Entity Instance
  21. Port Connectivity Checks: "mux5to1_8bit:ALU2_mux"
  22. Port Connectivity Checks: "mux2to1_2bit:R1Sel_mux"
- 23. Port Connectivity Checks: "mux5to1_8bit:MemMux"
- 24. Port Connectivity Checks: "ALU:ALUV3"
- 25. Port Connectivity Checks: "ALU:ALUV2"
- 26. Port Connectivity Checks: "ALU:ALUV1"
- 27. Port Connectivity Checks: "ALU:ALUV0"
- 28. Port Connectivity Checks: "VRF:VRF_block"
- 29. Port Connectivity Checks: "ALU:ALUR2"
- 30. Port Connectivity Checks: "FSM:Control"
- 31. Post-Synthesis Netlist Statistics for Top Partition
- 32. Elapsed Time Per Partition
- 33. Analysis & Synthesis Messages
- 34. Analysis & Synthesis Suppressed Messages
+ 23. Port Connectivity Checks: "ALU:ALUV3"
+ 24. Port Connectivity Checks: "ALU:ALUV2"
+ 25. Port Connectivity Checks: "ALU:ALUV1"
+ 26. Port Connectivity Checks: "ALU:ALUV0"
+ 27. Port Connectivity Checks: "VRF:VRF_block"
+ 28. Port Connectivity Checks: "ALU:ALUR2"
+ 29. Port Connectivity Checks: "FSM:Control"
+ 30. Post-Synthesis Netlist Statistics for Top Partition
+ 31. Elapsed Time Per Partition
+ 32. Analysis & Synthesis Messages
+ 33. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -66,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Dec  5 02:07:48 2022       ;
+; Analysis & Synthesis Status     ; Successful - Mon Dec  5 15:46:09 2022       ;
 ; Quartus Prime Version           ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
 ; Revision Name                   ; multicycle                                  ;
 ; Top-level Entity Name           ; multicycle                                  ;
@@ -186,7 +185,8 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -573,15 +573,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------+-------+----------+---------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "mux5to1_8bit:MemMux"                                                                                                                       ;
-+------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                                                                                                                     ;
-+------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
-; sel  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (3 bits) it drives.  Extra input bit(s) "sel[2..1]" will be connected to GND. ;
-+------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
-
-
 +-------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "ALU:ALUV3"                                                                                               ;
 +------+--------+----------+----------------------------------------------------------------------------------------------------------+
@@ -648,14 +639,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "FSM:Control"                                                                                 ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port          ; Type   ; Severity ; Details                                                                             ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
-; cycle_counter ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; VRFwrite      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FSM:Control"                                                                                                                                                                   ;
++---------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                                                                                                               ;
++---------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; cycle_counter ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
+; MemIn         ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (3 bits) it drives.  The 2 most-significant bit(s) in the port expression will be connected to GND. ;
+; VRFwrite      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
++---------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -704,7 +696,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
-    Info: Processing started: Mon Dec  5 02:07:36 2022
+    Info: Processing started: Mon Dec  5 15:45:55 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off multicycle -c multicycle
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -829,6 +821,12 @@ Info (12128): Elaborating entity "mux2to1_2bit" for hierarchy "mux2to1_2bit:R1Se
 Info (12128): Elaborating entity "sExtend" for hierarchy "sExtend:SE4" File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.v Line: 318
 Info (12128): Elaborating entity "zExtend" for hierarchy "zExtend:ZE3" File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.v Line: 319
 Info (12128): Elaborating entity "zExtend" for hierarchy "zExtend:ZE5" File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.v Line: 320
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "MemIn[2]" is missing source, defaulting to GND File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.v Line: 65
+    Warning (12110): Net "MemIn[1]" is missing source, defaulting to GND File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.v Line: 65
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "MemIn[2]" is missing source, defaulting to GND File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.v Line: 65
+    Warning (12110): Net "MemIn[1]" is missing source, defaulting to GND File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/multicycle.v Line: 65
 Warning (12241): 6 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13012): Latch FSM:Control|R2Sel has unsafe behavior File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 41
     Warning (13013): Ports D and ENA on the latch are fed by the same signal FSM:Control|state.c3_vload File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 52
@@ -1426,11 +1424,11 @@ Info (21057): Implemented 414 device resources after synthesis - the final resou
     Info (21059): Implemented 60 output pins
     Info (21061): Implemented 339 logic cells
     Info (21064): Implemented 8 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 627 warnings
-    Info: Peak virtual memory: 492 megabytes
-    Info: Processing ended: Mon Dec  5 02:07:48 2022
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:29
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 633 warnings
+    Info: Peak virtual memory: 496 megabytes
+    Info: Processing ended: Mon Dec  5 15:46:09 2022
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:35
 
 
 +------------------------------------------+

@@ -40,8 +40,8 @@ MemIn, VRFwrite, X1Load, X2Load, T0Ld, T1Ld, T2Ld, T3Ld, VoutSel, R2Sel, R2Ld, A
 	output 	MemIn, VRFwrite, X1Load, X2Load, T0Ld, T1Ld, T2Ld, T3Ld, VoutSel;
 	output R2Sel, R2Ld;
 
-	reg MemIn, VRFwrite, X1Load, X2Load, T0Ld, T1Ld, T2Ld, T3Ld, VoutSel, R2Sel, R2Ld;
-	reg [2:0] ALUVOp;
+	reg VRFwrite, X1Load, X2Load, T0Ld, T1Ld, T2Ld, T3Ld, VoutSel, R2Sel, R2Ld;
+	reg [2:0] ALUVOp, MemIn;
 	
 	
 	//implementation of counter - https://www.chipverify.com/verilog/verilog-parameters

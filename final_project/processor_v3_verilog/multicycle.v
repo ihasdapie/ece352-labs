@@ -62,7 +62,7 @@ wire 	[7:0] R2MuxOut, ALUR2Out;
 wire 	R2Sel;
 
 wire	[7:0] MemMuxWire;
-wire 	MemIn;
+wire 	[2:0] MemIn;
 
 wire	[7:0] ALU1wire, ALU2wire, ALUwire, ALUOut, MDRwire, MEMwire;
 wire	[7:0] IR, SE4wire, ZE5wire, ZE3wire, AddrWire, RegWire;
@@ -174,7 +174,7 @@ mux2to1_8bit 		R2Mux(
 
 ALU		ALUR2(
 	.in1(R2wire),.in2(8'b1),.out(ALUR2Out),
-	.ALUOp(1'b0) // always add (0) 
+	.ALUOp(3'b000) // always add (0) 
 );
 
 
