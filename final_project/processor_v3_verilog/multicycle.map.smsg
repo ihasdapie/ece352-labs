@@ -1,1 +1,1 @@
-Warning (10268): Verilog HDL information at FSM.v(70): always construct contains both blocking and non-blocking assignments File: /home/ihasdapie/Documents/School/Y3S1/ECE352/ece352-labs/final_project/processor_v3_verilog/FSM.v Line: 70
+Warning (10268): Verilog HDL information at FSM.v(70): always construct contains both blocking and non-blocking assignments File: C:/Users/zhan9947/352/ece352-labs-main/final_project/processor_v3_verilog/FSM.v Line: 70

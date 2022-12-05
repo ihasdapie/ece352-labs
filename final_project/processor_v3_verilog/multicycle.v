@@ -181,7 +181,7 @@ ALU		ALUR2(
 /* new stuff */
 
 VRF		VRF_block(
-	.clock(clock),.reset(reset),.VRFWrite(VRFWrite),
+	.clock(clock),.reset(reset),.VRFWrite(VRFwrite),
 	.vdataw(vdataw),.vreg1(IR[7:6]),.vreg2(IR[5:4]),
 	.vregw(IR[7:6]),.vdata1(VFout1wire),.vdata2(VFout2wire),
 	.r0(vreg0),.r1(vreg1),.r2(vreg2),.r3(vreg3)

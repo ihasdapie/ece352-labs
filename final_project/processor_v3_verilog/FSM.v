@@ -174,6 +174,20 @@ MemIn, VRFwrite, X1Load, X2Load, T0Ld, T1Ld, T2Ld, T3Ld, VoutSel, R2Sel, R2Ld, A
 					RFWrite = 0;
 					RegIn = 0;
 					FlagWrite = 0;
+					
+					VRFwrite = 0;
+					X1Load = 0;
+					X2Load = 0;
+					MemIn = 0;
+					T0Ld = 0;
+					T1Ld = 0;
+					T2Ld = 0;
+					T3Ld = 0;
+					VoutSel = 0;
+					R2Sel = 0;
+					R2Ld = 0;
+					
+					
 				end	
 			c2: 		//control = 19'b0000000100000000000;
 				begin

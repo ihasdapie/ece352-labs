@@ -57,8 +57,8 @@ begin
 end
 
 // Assign temporary values to the outputs
-assign data1 = data1_tmp;
-assign data2 = data2_tmp;
+assign vdata1 = data1_tmp;
+assign vdata2 = data2_tmp;
 
 assign r0 = k0;
 assign r1 = k1;
